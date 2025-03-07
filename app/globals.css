@@ -2,20 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Base colors */
+    --background: 0 0% 9%;
+    --foreground: 153 70% 56%;
+
+    /* Primary colors */
+    --primary: 144 95% 18%;
+    --primary-foreground: 0 0% 98%;
+
+    /* Secondary colors (derived from primary) */
+    --secondary: 144 50% 25%;
+    --secondary-foreground: 0 0% 98%;
+
+    /* Muted colors */
+    --muted: 0 0% 37%;
+    --muted-foreground: 0 0% 98%;
+
+    /* Accent colors */
+    --accent: 153 70% 56%;
+    --accent-foreground: 144 95% 18%;
+
+    /* Card colors */
+    --card: 0 0% 13%;
+    --card-foreground: 0 0% 98%;
+
+    /* Destructive colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Border and radius */
+    --border: 144 30% 18%;
+    --radius: 0.5rem;
+
+    /* Input colors */
+    --input: 144 20% 20%;
+
+    /* Ring colors */
+    --ring: 153 70% 56%;
+
+    /* Additional colors for shadcn */
+    --popover: 0 0% 13%;
+    --popover-foreground: 0 0% 98%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
